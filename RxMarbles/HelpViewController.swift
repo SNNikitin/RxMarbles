@@ -553,8 +553,7 @@ class HelpViewController: AnimatedPagingScrollViewController {
     }
     
     private func _configureSharePage() {
-        var navBar = RxMarbles.Image.navBarShare.imageView()
-        
+        let navBar = RxMarbles.Image.navBarShare.imageView()
 
         let shareLabel: UILabel = {
             let label = UILabel()

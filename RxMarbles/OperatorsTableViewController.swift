@@ -143,7 +143,11 @@ extension OperatorsTableViewController: UIViewControllerPreviewingDelegate {
         let detailController = OperatorViewController(rxOperator:selectedOperator)
         
         // Set the source rect to the cell frame, so surrounding elements are blurred.
+        #if targetEnvironment(macCatalyst)
         previewingContext.sourceRect = cell.frame
+        #else
+        previewingContext.sourceRect = cell.frame
+        #endif
         
         return detailController
     }
